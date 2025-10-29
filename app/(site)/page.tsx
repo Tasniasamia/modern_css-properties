@@ -327,8 +327,18 @@ const page = () => {
 <div className="flex justify-center items-center h-[600px]">
   <Image src="/about.png" width={1000} height={1000} className="about-img3 h-[400px] w-[400px] object-fill" alt="about"/>
 </div>
+<div className="flex justify-center items-center h-[600px]">
+  <Image src="/about.png" width={1000} height={1000} className="about-img4 h-[400px] w-[400px] object-fill" alt="about"/>
+</div>
+<div className="flex justify-center items-center h-[600px]">
+  <Image src="/about.png" width={1000} height={1000} className="about-img5 rounded-full h-[400px] w-[400px] object-fill" alt="about"/>
+</div>
 
-
+<div className="max-w-[1320px] mx-auto hero">
+<Image src="/banner.png" width={1000} height={1000} alt="banner" className=" banner"/>
+<h1 className="text-4xl text-center font-bold py-3 text-black -mt-6">CSS MASK</h1>
+<p className="text-base text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde vero accusamus illum ut ipsum excepturi illo officiis. Esse quisquam vitae, perferendis itaque ratione, repellat repudiandae voluptatibus mollitia aliquam dignissimos quam?</p>
+</div>
     </div>
   );
 };

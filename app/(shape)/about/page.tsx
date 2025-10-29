@@ -44,13 +44,19 @@ const page = () => {
       </div>
       </div>
 
-      {/* slide mask effect */}
+      {/* slide mask effect 1 */}
  <div className="hero wipe-effect-1 max-w-[1320px] mx-auto">
 <div className="slide ">1</div>
 <div className="slide ">2</div>
 
  </div>
 
+     {/* slide mask effect 2 */}
+     <div className="hero wipe-effect-2 max-w-[1320px] mx-auto my-26">
+<div className="slide ">1</div>
+<div className="slide ">2</div>
+
+ </div>
 
     </div>
   );

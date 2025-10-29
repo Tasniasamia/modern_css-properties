@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --size:0%;
+  --step:1;
 }
 
 @theme inline {
@@ -486,12 +487,14 @@ initial-value:0%;
 mask-image:linear-gradient(90deg,#000 0%,#0000 40%); 
 mask-image:linear-gradient(90deg,#000 -40%,#0000 0%);*/
 /* mask-image:linear-gradient(90deg,#000 0%,#0000 0%); */
+
 --size: 40%;
 /* mask-image: linear-gradient(
   90deg,
   #000 calc(var(--position) - var(--size)),
   #0000 var(--position)
 ); */
+
 /* look like appstick hero section */
 mask-image: radial-gradient(
   circle,
@@ -500,8 +503,37 @@ mask-image: radial-gradient(
 );
 transition: --position 0.75s ease-in-out;
 
+
+//conic gradient not supported var
+/* mask-image: conic-gradient(
+  circle,
+  #000 calc(var(--position) - var(--size)),
+  #0000 var(--position)
+); */
+
+
+transition: --position 0.75s ease-in-out;
 }
 .slide:nth-child(2):hover{
   --position:calc(100% + var(--size));
 }
+.wipe-effect-2 .slide:nth-child(2){
 
+  
+  
+  mask-image: linear-gradient(
+    90deg,
+    #000 10%,
+    rgb(0 0 0 / 75%) 0 calc(var(--position) - var(--size) + (var(--step)*1)),
+    rgb(0 0 0 / 50%) 0 calc(var(--position) - var(--size) + (var(--step)*1)),
+    rgb(0 0 0 / 25%) 0 calc(var(--position) - var(--size) + (var(--step)*1)),
+    #0000 calc(var(--position))
+  );
+  transition: --position 0.75s ease-in-out;
+  
+  }
+
+  
+
+
+ 

@@ -291,3 +291,13 @@ body {
   mask-size: 10%; 
 
 } 
+
+.about-img3{
+  /* mask:radial-gradient(#0000,#000);; */
+  /* mask:radial-gradient(#0000 100px,#000 100px); not working */
+  /* mask:radial-gradient(circle at bottom,#0000 50px,#000 50px); */
+  /* mask:radial-gradient(circle at top,#0000 50px,#000 50px); */
+  mask:radial-gradient(30px at 50% 30px, #0000 99%,#000) 50%-30px / 50% 100px;
+  mask-size: 15%; 
+
+} 

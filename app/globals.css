@@ -364,6 +364,9 @@ body {
   }
 }
 
+.my-div {
+  background-image: linear-gradient(to right, #fff, #000);
+}
 
 .shape{
   /* clip-path:inset(40px);
@@ -504,7 +507,7 @@ mask-image: radial-gradient(
 transition: --position 0.75s ease-in-out;
 
 
-//conic gradient not supported var
+/*conic gradient not supported var*/
 /* mask-image: conic-gradient(
   circle,
   #000 calc(var(--position) - var(--size)),

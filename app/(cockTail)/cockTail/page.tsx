@@ -7,7 +7,6 @@ const page = () => {
     <main>
       <Hero />
       <Cocktails />
-      <div className="h-[500px] bg-red-300 w-full"/>
     </main>
   );
 };

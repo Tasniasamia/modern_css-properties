@@ -50,7 +50,7 @@ const Hero = () => {
 
     // video scroll play control
     const startValue = isMobile ? "top 60%" : "center 60%";
-    const endValue = isMobile ? "120% top" : "bottom top";
+    const endValue = isMobile ? "bottom top" : "bottom top";
     if (videoRef.current) {
       const videoEl = videoRef.current;
       const tl2= gsap.timeline({

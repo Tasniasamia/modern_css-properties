@@ -8,7 +8,7 @@ import React, { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Hero = () => {
-  const videoRef = useRef(null);
+  const videoRef = useRef<any>(null);
 
   useGSAP(() => {
     const isMobile = window.innerWidth <= 767;
@@ -51,20 +51,27 @@ const Hero = () => {
     // video scroll play control
     const startValue = isMobile ? "top 60%" : "center 60%";
     const endValue = isMobile ? "120% top" : "bottom top";
-
-    const videoEl = videoRef.current;
-
-    if (videoEl) {
-      ScrollTrigger.create({
-        trigger: "#hero",
-        start: startValue,
-        end: endValue,
-        scrub: true,
-        onEnter: () => videoEl.play(),
-        onLeave: () => videoEl.pause(),
-        onEnterBack: () => videoEl.play(),
-        onLeaveBack: () => videoEl.pause(),
-      });
+    if (videoRef.current) {
+      const videoEl = videoRef.current;
+      const tl2= gsap.timeline({
+          scrollTrigger: {
+            trigger: "video",
+            start: startValue,
+            end: endValue,
+            scrub: true,
+            pin: true,
+            onEnter: () => videoEl.play(),
+            onLeave: () => videoEl.pause(),
+            onEnterBack: () => videoEl.play(),
+            onLeaveBack: () => videoEl.pause(),
+          },
+        })
+        videoRef.current.onloadedmetadata=()=>{
+          tl2.to(videoRef.current,{
+            currentTime:videoRef.current.duration
+          })
+        }
+     
     }
   }, []);
 
@@ -106,11 +113,12 @@ const Hero = () => {
         </div>
       </section>
 
-      <div className="video absolute inset-0 -z-10">
+      <div className="video absolute inset-0">
         <video
-          ref={videoRef}
           src="/videos/input.mp4"
+          ref={videoRef}
           muted
+          loop
           playsInline
           preload="auto"
         />
